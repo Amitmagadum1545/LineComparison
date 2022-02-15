@@ -34,7 +34,7 @@ namespace LineComparison
             double lengthOfLine2 = Math.Sqrt(Math.Pow((x4 - x3), 2) + Math.Pow((y4 - y3), 2));
             Console.WriteLine($"Length of The Second Line is" + lengthOfLine2);
 
-            if (lengthOfLine1==lengthOfLine2)
+            if (lengthOfLine1.Equals (lengthOfLine2))
             {
                 Console.WriteLine("Length Of Line1 And Length of Line2 are Equal");
             }
