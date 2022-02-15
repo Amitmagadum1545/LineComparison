@@ -11,14 +11,14 @@ namespace LineComparison
         public static void Comparing_Two_Lines_Length()
         {
             Console.WriteLine("Enter the values of x1");
-            double x1=Convert.ToDouble(Console.ReadLine());
+            double x1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter the values of y1");
             double y1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter the values of x2");
             double x2 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter the values of y2");
             double y2 = Convert.ToDouble(Console.ReadLine());
-           
+
             Console.WriteLine("Enter the values of x3");
             double x3 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter the values of y3");
@@ -34,13 +34,18 @@ namespace LineComparison
             double lengthOfLine2 = Math.Sqrt(Math.Pow((x4 - x3), 2) + Math.Pow((y4 - y3), 2));
             Console.WriteLine($"Length of The Second Line is" + lengthOfLine2);
 
-            if (lengthOfLine1.Equals (lengthOfLine2))
+            double diff = lengthOfLine1.CompareTo (lengthOfLine2);
+            if (diff==0)
             {
                 Console.WriteLine("Length Of Line1 And Length of Line2 are Equal");
             }
-            else
+            else if (diff<0)
             {
-                Console.WriteLine("Length of Line1 is not Equal to Length of Line2");
+                Console.WriteLine("Length of Line1 is Less than Length of Line2");
+            }
+            else if (diff>0)
+            {
+                Console.WriteLine("Length of Line1 is Greater than Length of Line2");
             }
         }
     }
