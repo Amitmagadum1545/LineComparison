@@ -8,7 +8,7 @@ namespace LineComparison
 {
     internal class LineLengthCalculation
     {
-        public static void Comparing_Two_Lines_Length()
+        public static double GetLineLength()
         {
             Console.WriteLine("Enter the values of x1");
             double x1 = Convert.ToDouble(Console.ReadLine());
@@ -19,20 +19,18 @@ namespace LineComparison
             Console.WriteLine("Enter the values of y2");
             double y2 = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter the values of x3");
-            double x3 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter the values of y3");
-            double y3 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter the values of x4");
-            double x4 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter the values of y4");
-            double y4 = Convert.ToDouble(Console.ReadLine());
+            double lengthOfLine = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
+            return lengthOfLine;
+        }
+        public static void Comparing_Two_Lines_Length()
+        {
+            Console.WriteLine("Enter the Coordinate Values for First line");
+            double lengthOfLine1 = GetLineLength();
+            Console.WriteLine($"Length of The Line 1 is" + lengthOfLine1);
 
-            double lengthOfLine1 = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
-            Console.WriteLine($"Length of The First Line is" + lengthOfLine1);
-
-            double lengthOfLine2 = Math.Sqrt(Math.Pow((x4 - x3), 2) + Math.Pow((y4 - y3), 2));
-            Console.WriteLine($"Length of The Second Line is" + lengthOfLine2);
+            Console.WriteLine("Enter the Coordinate Values for Second line");
+            double lengthOfLine2 = GetLineLength();
+            Console.WriteLine($"Length of The Line 2 is" + lengthOfLine2);
 
             double diff = lengthOfLine1.CompareTo (lengthOfLine2);
             if (diff==0)
